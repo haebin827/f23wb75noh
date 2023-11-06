@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  h1= title
+
+  class Elections {
+  constructor(year, location, candidate) {
+    this.year = year;
+    this.location = location;
+    this.candidate = candidate;
+  }
+
+  getYear() {
+    return this.year;
+  }
+
+  getLocation() {
+    return this.location;
+  }
+
+  getCandidate() {
+    return this.candidate;
+  }
+}
+
+const election1 = new Elections(2020, 'City A', 'Candidate X');
+const election2 = new Elections(2024, 'City B', 'Candidate Y');
+
+console.log(`Year: ${election1.getYear()}, Location: ${election1.getLocation()}, Candidate: ${election1.getCandidate()}`);
+console.log(`Year: ${election2.getYear()}, Location: ${election2.getLocation()}, Candidate: ${election2.getCandidate()}`);
