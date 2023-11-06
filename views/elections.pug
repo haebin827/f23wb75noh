@@ -3,28 +3,20 @@ extends layout
 block content
   h1= title
 
-  class Elections {
-  constructor(year, location, candidate) {
-    this.year = year;
-    this.location = location;
-    this.candidate = candidate;
-  }
+  - var Elections = [{"year":2020, "location":"City A","candidate" : "Candidate A"}]
+  - var Elections = [{"year":2021, "location":"City B","candidate" : "Candidate B"}]
+  - var Elections = [{"year":2022, "location":"City C","candidate" : "Candidate C"}]
 
-  getYear() {
-    return this.year;
-  }
+//-   class Elections {
+//-     constructor(year, location, candidate) {
+//-       this.year = year;
+//-       this.location = location;
+//-       this.candidate = candidate;
+//-     }
+//-   }
 
-  getLocation() {
-    return this.location;
-  }
+//- const election1 = new Elections(2020, 'City A', 'Candidate X');
+//- const election2 = new Elections(2024, 'City B', 'Candidate Y');
 
-  getCandidate() {
-    return this.candidate;
-  }
-}
-
-const election1 = new Elections(2020, 'City A', 'Candidate X');
-const election2 = new Elections(2024, 'City B', 'Candidate Y');
-
-console.log(`Year: ${election1.getYear()}, Location: ${election1.getLocation()}, Candidate: ${election1.getCandidate()}`);
-console.log(`Year: ${election2.getYear()}, Location: ${election2.getLocation()}, Candidate: ${election2.getCandidate()}`);
+//- console.log(`Year: ${election1.getYear()}, Location: ${election1.getLocation()}, Candidate: ${election1.getCandidate()}`);
+//- console.log(`Year: ${election2.getYear()}, Location: ${election2.getLocation()}, Candidate: ${election2.getCandidate()}`);
