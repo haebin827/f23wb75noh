@@ -7,16 +7,16 @@ block content
   - var Elections = [{"year":2021, "location":"City B","candidate" : "Candidate B"}]
   - var Elections = [{"year":2022, "location":"City C","candidate" : "Candidate C"}]
 
-//-   class Elections {
-//-     constructor(year, location, candidate) {
-//-       this.year = year;
-//-       this.location = location;
-//-       this.candidate = candidate;
-//-     }
-//-   }
-
-//- const election1 = new Elections(2020, 'City A', 'Candidate X');
-//- const election2 = new Elections(2024, 'City B', 'Candidate Y');
-
-//- console.log(`Year: ${election1.getYear()}, Location: ${election1.getLocation()}, Candidate: ${election1.getCandidate()}`);
-//- console.log(`Year: ${election2.getYear()}, Location: ${election2.getLocation()}, Candidate: ${election2.getCandidate()}`);
+  .container-fluid
+  .row
+    -
+      let results = [
+        { year: 2020, location: 'City A', candidate: 'Candidate A' },
+        { year: 2021, location: 'City B', candidate: 'Candidate B' },
+        { year: 2022, location: 'City C', candidate: 'Candidate C' }
+      ]
+    each result in results
+      .col-sm-2
+        h3 Year: #{result.year}
+        p Location: #{result.location}
+        p Candidate: #{result.candidate}
