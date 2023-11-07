@@ -1,11 +1,10 @@
 extends layout
 
 block content
-  h1= "Board Display"
-
-  p Rows: #{query.rows}, Cols: #{query.cols}
-  - let rows = Number(query.rows);
-  - let cols = Number(query.cols);
+  h1= title
+  p Rows: #{query.rows}, Columns: #{query.cols}
+  - var rows = Number(query.rows);
+  - var cols = Number(query.cols);
 
   if (!Number.isInteger(rows) || !Number.isInteger(cols))
     p Invalid input.
@@ -23,4 +22,4 @@ block content
               - cellValue = 2;
             - else if (i === j - 1)
               - cellValue = i;
-            td = cellValue
+            td= cellValue

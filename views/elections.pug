@@ -3,10 +3,6 @@ extends layout
 block content
   h1= title
 
-  - var Elections = [{"year":2020, "location":"City A","candidate" : "Candidate A"}]
-  - var Elections = [{"year":2021, "location":"City B","candidate" : "Candidate B"}]
-  - var Elections = [{"year":2022, "location":"City C","candidate" : "Candidate C"}]
-
   .container-fluid
   .row
     -
@@ -15,17 +11,13 @@ block content
         { year: 2021, location: 'City B', candidate: 'Candidate B' },
         { year: 2022, location: 'City C', candidate: 'Candidate C' }
       ]
-    each result in results
-      .col-sm-2
+    each result, index in results
+      .col-sm-2(onclick=`buy(${index})`)
         h3 Year: #{result.year}
         p Location: #{result.location}
         p Candidate: #{result.candidate}
-    
-    script.
+
+  script.
     function buy(index) {
       alert(`You purchased item ${index}.`);
-      }
-
-    each result, index in results
-      .item(onclick=`buy(${index})`)
-        p Item: #{result}
+    }
