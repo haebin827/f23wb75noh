@@ -20,3 +20,12 @@ block content
         h3 Year: #{result.year}
         p Location: #{result.location}
         p Candidate: #{result.candidate}
+    
+    script.
+    function buy(index) {
+      alert(`You purchased item ${index}.`);
+      }
+
+    each result, index in results
+      .item(onclick=`buy(${index})`)
+        p Item: #{result}
